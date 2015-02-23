@@ -23,14 +23,22 @@ $(document).ready(function() {
             $(this).css('left', '520px');
   }
 );
-    // animate hadouken to the right of the screen
-    // show hadouken and animate it to the right of the screen
   })
     $('.ryu').mouseup(function() {
     console.log('mouseup');
         $('.ryu-throwing').hide();
         $('.ryu-ready').show();
-  });
+  });       
+});
+$(document).ready(function(){
+    $('.ryu').keydown(function(){
+        $('.ryu-still').hide();
+        $('.ryu-cool').show();
+    });
+    $('.ryu').keyup(function(){
+        $('.ryu-cool').hide();
+        $('.ryu-ready').show();
+    });
 });
 function playHadouken () {
   $('#hadouken-sound')[0].volume = 0.5;
