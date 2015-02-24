@@ -28,18 +28,22 @@ $(document).ready(function() {
     console.log('mouseup');
         $('.ryu-throwing').hide();
         $('.ryu-ready').show();
-  });       
+  });  
 });
-$(document).ready(function(){
-    $('.ryu').keydown(function(){
-        $('.ryu-still').hide();
-        $('.ryu-cool').show();
-    });
-    $('.ryu').keyup(function(){
-        $('.ryu-cool').hide();
-        $('.ryu-ready').show();
-    });
-});
+    $(document).keydown(function (e) {
+		if (e.keyCode == 88) { 
+			$('.ryu-ready').hide();
+			$('.ryu-still').hide();
+			$('.ryu-cool').show();
+		}
+	});
+
+	$(document).keyup(function (e) {
+		if (e.keyCode == 88) { 
+			$('.ryu-cool').hide();
+			$('.ryu-ready').show();
+		}
+	});
 function playHadouken () {
   $('#hadouken-sound')[0].volume = 0.5;
   $('#hadouken-sound')[0].load();
